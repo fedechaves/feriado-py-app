@@ -56,9 +56,15 @@ function App() {
   return (
     <main className="flex justify-center items-center ">
       <div className="box-border h-2/3 w-2/3 p-4 border-4">
-        <h1 className="text-red-400">
-          El próximo feriado, {nextHoliday.motivo}, será {rtf.format(dayDiff, "days")}
-        </h1>
+        <div className="div">
+          <div className="">
+            <h6 className="text-red-400">
+              El próximo feriado, {nextHoliday.motivo}, será {rtf.format(dayDiff, "days")}
+            </h6>
+            <input type="text" />
+            <p>empty</p>
+          </div>
+        </div>
       </div>
     </main>
   );
