@@ -54,15 +54,21 @@ const rtf = new Intl.RelativeTimeFormat("es-PY", {numeric: "auto"});
 
 function App() {
   return (
-    <main className="flex justify-center items-center ">
-      <div className="box-border h-2/3 w-2/3 p-4 border-4">
-        <div className="div">
-          <div className="">
-            <h6 className="text-red-400">
-              El próximo feriado, {nextHoliday.motivo}, será {rtf.format(dayDiff, "days")}
+    <main className="flex justify-center items-center h-100vh">
+      <div className="bg-white">
+        <div className="flex mb-35px">
+          <div>
+            <h6 className="uppercase tracking-widest text-[#FF5757]">
+              El próximo feriado, {nextHoliday.motivo}
             </h6>
-            <input type="text" />
-            <p>empty</p>
+            <input
+              className="w-150px p-10px mt-10px mr-20px rounded-lg border-[0.5px] border-solid border-[#DBDBDB] tracking-[0.125rem] caret-[#854dff] focus:border-solid focus:border-0.5px focus:border-[#854dff]" //outline none missed - focus and border fix pls
+              placeholder="DD"
+              type="text"
+            />
+            <p className="italic text-xs font-normal text-[#FF5757] my-1  mx-0">
+              {rtf.format(dayDiff, "days")}
+            </p>
           </div>
         </div>
       </div>
