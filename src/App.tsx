@@ -54,19 +54,24 @@ const rtf = new Intl.RelativeTimeFormat("es-PY", {numeric: "auto"});
 
 function App() {
   return (
-    <main className="flex justify-center items-center h-100vh">
-      <div className="bg-white">
-        <div className="flex mb-35px">
+    <main className="container">
+      {/* flex justify-center items-center h-100vh   */}
+      <div className="content">
+        {/* bg-white */}
+        <div className="input">
+          {/* flex mb-35px */}
           <div>
-            <h6 className="uppercase tracking-widest text-[#FF5757]">
+            <h6>
+              {/* uppercase tracking-widest text-[#FF5757] */}
               El próximo feriado, {nextHoliday.motivo}
             </h6>
             <input
-              className="w-150px p-10px mt-10px mr-20px rounded-lg border-[0.5px] border-solid border-[#DBDBDB] tracking-[0.125rem] caret-[#854dff] focus:border-solid focus:border-0.5px focus:border-[#854dff]" //outline none missed - focus and border fix pls
+              className="" //outline none missed - focus and border fix pls -w-150px p-10px mt-10px mr-20px rounded-lg border-[0.5px] border-solid border-[#DBDBDB] tracking-[0.125rem] caret-[#854dff] focus:border-solid focus:border-0.5px focus:border-[#854dff]
               placeholder="DD"
               type="text"
             />
-            <p className="italic text-xs font-normal text-[#FF5757] my-1  mx-0">
+            <p className="error">
+              {/* italic text-xs font-normal text-[#FF5757] my-1  mx-0 */}
               {rtf.format(dayDiff, "days")}
             </p>
           </div>
