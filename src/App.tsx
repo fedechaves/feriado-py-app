@@ -54,27 +54,17 @@ const rtf = new Intl.RelativeTimeFormat("es-PY", {numeric: "auto"});
 
 function App() {
   return (
-    <main className="container">
-      {/* flex justify-center items-center h-100vh   */}
+    <main className="container" role="main">
       <div className="content">
-        {/* bg-white */}
-        <div className="input">
-          {/* flex mb-35px */}
-          <div>
-            <h6>
-              {/* uppercase tracking-widest text-[#FF5757] */}
-              El próximo feriado, {nextHoliday.motivo}
-            </h6>
-            <input
-              className="" //outline none missed - focus and border fix pls -w-150px p-10px mt-10px mr-20px rounded-lg border-[0.5px] border-solid border-[#DBDBDB] tracking-[0.125rem] caret-[#854dff] focus:border-solid focus:border-0.5px focus:border-[#854dff]
-              placeholder="DD"
-              type="text"
-            />
-            <p className="error">
-              {/* italic text-xs font-normal text-[#FF5757] my-1  mx-0 */}
-              {rtf.format(dayDiff, "days")}
-            </p>
-          </div>
+        <div className="result">
+          <h1>
+            <span>EL PRÓXIMO FERIADO ES: </span> {nextHoliday.motivo}.
+          </h1>
+        </div>
+        <div className="result">
+          <h1>
+            <span>Dentro de:</span> {rtf.format(dayDiff, "days")}
+          </h1>
         </div>
       </div>
     </main>
