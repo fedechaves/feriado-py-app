@@ -51,6 +51,11 @@ const msDiff = nextHoliday.date.getTime() - today.getTime();
 const dayDiff = Math.round(msDiff / 86400000);
 
 const rtf = new Intl.RelativeTimeFormat("es-PY", {numeric: "auto"});
+let rtfToParts = rtf.formatToParts(dayDiff, "day");
+
+function capitalizeFirstLetter(string: string): string {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function App() {
   return (
@@ -63,7 +68,8 @@ function App() {
         </div>
         <div className="result">
           <h1>
-            <span>Dentro de:</span> {rtf.format(dayDiff, "days")}
+            <span>{capitalizeFirstLetter(rtfToParts[0].value)}:</span> {rtfToParts[1].value}{" "}
+            {rtfToParts[2].value}
           </h1>
         </div>
       </div>
